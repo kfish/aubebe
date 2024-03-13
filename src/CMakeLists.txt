@@ -20,8 +20,9 @@ include_directories(
     ${IMGUI_DIR}/backends
     )
 
-add_executable(imgui-demo
+add_executable(aubebe
     main.cpp
+    aubebe.cpp
     ${IMGUI_DIR}/imgui.cpp
     ${IMGUI_DIR}/imgui_demo.cpp
     ${IMGUI_DIR}/imgui_draw.cpp
@@ -31,7 +32,7 @@ add_executable(imgui-demo
     ${IMGUI_DIR}/backends/imgui_impl_sdlrenderer2.cpp
     )
 
-target_link_libraries(imgui-demo
+target_link_libraries(aubebe
     GL
     dl
     ${SDL2_LIBRARIES}
