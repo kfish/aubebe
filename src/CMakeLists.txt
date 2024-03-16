@@ -13,15 +13,18 @@ find_package(SDL2 REQUIRED)
 
 get_filename_component(PARENT_DIR ${PROJECT_SOURCE_DIR} DIRECTORY)
 set(IMGUI_DIR ${PARENT_DIR}/submodule/imgui)
+set(IMGUIFILEDIALOG_DIR ${PARENT_DIR}/submodule/ImGuiFileDialog)
 
 include_directories(
     ${SDL2_INCLUDE_DIRS}
     ${IMGUI_DIR}
     ${IMGUI_DIR}/backends
+    ${IMGUIFILEDIALOG_DIR}
     )
 
-add_executable(imgui-demo
+add_executable(aubebe
     main.cpp
+    aubebe.cpp
     ${IMGUI_DIR}/imgui.cpp
     ${IMGUI_DIR}/imgui_demo.cpp
     ${IMGUI_DIR}/imgui_draw.cpp
@@ -29,9 +32,10 @@ add_executable(imgui-demo
     ${IMGUI_DIR}/imgui_widgets.cpp
     ${IMGUI_DIR}/backends/imgui_impl_sdl2.cpp
     ${IMGUI_DIR}/backends/imgui_impl_sdlrenderer2.cpp
+    ${IMGUIFILEDIALOG_DIR}/ImGuiFileDialog.cpp
     )
 
-target_link_libraries(imgui-demo
+target_link_libraries(aubebe
     GL
     dl
     ${SDL2_LIBRARIES}

@@ -10,11 +10,15 @@
 // Important to understand: SDL_Renderer is an _optional_ component of SDL2.
 // For a multi-platform app consider using e.g. SDL+DirectX on Windows and SDL+OpenGL on Linux/OSX.
 
+#define DEBUG_SHOW_DEMO_WINDOW
+
 #include "imgui.h"
 #include "imgui_impl_sdl2.h"
 #include "imgui_impl_sdlrenderer2.h"
 #include <stdio.h>
 #include <SDL.h>
+
+#include "aubebe.h"
 
 #if !SDL_VERSION_ATLEAST(2,0,17)
 #error This backend requires SDL 2.0.17+ because of SDL_RenderGeometry() function
@@ -85,6 +89,7 @@ int main(int, char**)
     //IM_ASSERT(font != nullptr);
 
     // Our state
+    bool show_aubebe_window = true;
     bool show_demo_window = true;
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
@@ -113,6 +118,10 @@ int main(int, char**)
         ImGui_ImplSDL2_NewFrame();
         ImGui::NewFrame();
 
+        if (show_aubebe_window)
+            AuBeBe::ShowMainWindow(&show_aubebe_window);
+
+#ifdef DEBUG_SHOW_DEMO_WINDOW
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
         if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
@@ -149,6 +158,7 @@ int main(int, char**)
                 show_another_window = false;
             ImGui::End();
         }
+#endif
 
         // Rendering
         ImGui::Render();
