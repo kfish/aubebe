@@ -24,6 +24,19 @@
 #error This backend requires SDL 2.0.17+ because of SDL_RenderGeometry() function
 #endif
 
+void HandleShortcuts(bool * done) {
+    ImGuiIO& io = ImGui::GetIO();
+
+    // Check if Ctrl+Q is pressed
+    if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_Q)) {
+        // Quit the application
+        SDL_Event event;
+        event.type = SDL_QUIT;
+        SDL_PushEvent(&event);
+        *done = true;
+    }
+}
+
 // Main code
 int main(int, char**)
 {
@@ -118,6 +131,7 @@ int main(int, char**)
         ImGui_ImplSDL2_NewFrame();
         ImGui::NewFrame();
 
+        HandleShortcuts(&done);
         app::ShowMenuBar(&done);
 
         if (show_app_window)
