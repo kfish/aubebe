@@ -14,12 +14,14 @@ find_package(SDL2 REQUIRED)
 get_filename_component(PARENT_DIR ${PROJECT_SOURCE_DIR} DIRECTORY)
 set(IMGUI_DIR ${PARENT_DIR}/submodule/imgui)
 set(IMGUIFILEDIALOG_DIR ${PARENT_DIR}/submodule/ImGuiFileDialog)
+set(IMPOP_DIR ${PARENT_DIR}/submodule/impop)
 
 include_directories(
     ${SDL2_INCLUDE_DIRS}
     ${IMGUI_DIR}
     ${IMGUI_DIR}/backends
     ${IMGUIFILEDIALOG_DIR}
+    ${IMPOP_DIR}/include
     ${PARENT_DIR}/include
     )
 

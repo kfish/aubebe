@@ -3,6 +3,7 @@
                             //
 #include "imgui.h"
 #include "ImGuiFileDialog.h"
+#include "impop_footer.h"
 
 namespace app {
 
@@ -37,6 +38,8 @@ void ShowMenuBar(bool * done)
         }
         ImGui::EndMainMenuBar();
     }
+
+    ImPop::PerfFooter();
 }
 
 void ShowMainWindow(bool* p_open)

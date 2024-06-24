@@ -11,6 +11,7 @@
 // For a multi-platform app consider using e.g. SDL+DirectX on Windows and SDL+OpenGL on Linux/OSX.
 
 #define DEBUG_SHOW_DEMO_WINDOW
+#define IMGUI_DEFINE_MATH_OPERATORS
 
 #include "imgui.h"
 #include "imgui_impl_sdl2.h"
