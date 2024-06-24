@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <SDL.h>
 
-#include "aubebe.h"
+#include "app_window.h"
 
 #if !SDL_VERSION_ATLEAST(2,0,17)
 #error This backend requires SDL 2.0.17+ because of SDL_RenderGeometry() function
@@ -89,7 +89,7 @@ int main(int, char**)
     //IM_ASSERT(font != nullptr);
 
     // Our state
-    bool show_aubebe_window = true;
+    bool show_app_window = true;
     bool show_demo_window = true;
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
@@ -118,8 +118,8 @@ int main(int, char**)
         ImGui_ImplSDL2_NewFrame();
         ImGui::NewFrame();
 
-        if (show_aubebe_window)
-            AuBeBe::ShowMainWindow(&show_aubebe_window);
+        if (show_app_window)
+            app::ShowMainWindow(&show_app_window);
 
 #ifdef DEBUG_SHOW_DEMO_WINDOW
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
