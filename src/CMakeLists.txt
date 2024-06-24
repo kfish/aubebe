@@ -7,23 +7,25 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -mavx2 -mfma -ffast-math")
 
-project(imgui-template)
+project(aubebe)
 
 find_package(SDL2 REQUIRED)
 
 get_filename_component(PARENT_DIR ${PROJECT_SOURCE_DIR} DIRECTORY)
 set(IMGUI_DIR ${PARENT_DIR}/submodule/imgui)
 set(IMGUIFILEDIALOG_DIR ${PARENT_DIR}/submodule/ImGuiFileDialog)
+set(IMPOP_DIR ${PARENT_DIR}/submodule/impop)
 
 include_directories(
     ${SDL2_INCLUDE_DIRS}
     ${IMGUI_DIR}
     ${IMGUI_DIR}/backends
     ${IMGUIFILEDIALOG_DIR}
+    ${IMPOP_DIR}/include
     ${PARENT_DIR}/include
     )
 
-add_executable(imgui-template-app
+add_executable(aubebe
     main.cpp
     ${IMGUI_DIR}/imgui.cpp
     ${IMGUI_DIR}/imgui_demo.cpp
@@ -35,7 +37,7 @@ add_executable(imgui-template-app
     ${IMGUIFILEDIALOG_DIR}/ImGuiFileDialog.cpp
     )
 
-target_link_libraries(imgui-template-app
+target_link_libraries(aubebe
     GL
     dl
     ${SDL2_LIBRARIES}

@@ -4,3 +4,6 @@
 [submodule "submodule/ImGuiFileDialog"]
 	path = submodule/ImGuiFileDialog
 	url = https://github.com/aiekick/ImGuiFileDialog.git
+[submodule "submodule/impop"]
+	path = submodule/impop
+	url = git@github.com:kfish/impop.git
