@@ -22,9 +22,8 @@ include_directories(
     ${IMGUIFILEDIALOG_DIR}
     )
 
-add_executable(aubebe
+add_executable(imgui-template-app
     main.cpp
-    aubebe.cpp
     ${IMGUI_DIR}/imgui.cpp
     ${IMGUI_DIR}/imgui_demo.cpp
     ${IMGUI_DIR}/imgui_draw.cpp
@@ -35,7 +34,7 @@ add_executable(aubebe
     ${IMGUIFILEDIALOG_DIR}/ImGuiFileDialog.cpp
     )
 
-target_link_libraries(aubebe
+target_link_libraries(imgui-template-app
     GL
     dl
     ${SDL2_LIBRARIES}
