@@ -17,7 +17,7 @@ if( EXISTS "${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json" )
    )
 endif()
 
-project(imgui-template)
+project(aubebe)
 
 #add_subdirectory(submodule/imgui EXCLUDE_FROM_ALL)
 
