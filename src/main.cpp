@@ -118,6 +118,8 @@ int main(int, char**)
         ImGui_ImplSDL2_NewFrame();
         ImGui::NewFrame();
 
+        app::ShowMenuBar(&done);
+
         if (show_app_window)
             app::ShowMainWindow(&show_app_window);
 

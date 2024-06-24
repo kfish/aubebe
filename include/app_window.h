@@ -28,6 +28,17 @@ void filedialog() {
   }
 }
 
+void ShowMenuBar(bool * done)
+{
+    if (ImGui::BeginMainMenuBar()) {
+        if (ImGui::BeginMenu("App")) {
+            ImGui::MenuItem("Quit", "Ctrl+Q", done);
+            ImGui::EndMenu();
+        }
+        ImGui::EndMainMenuBar();
+    }
+}
+
 void ShowMainWindow(bool* p_open)
 {
     ImGui::Begin("App", p_open);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
