@@ -20,6 +20,7 @@ include_directories(
     ${IMGUI_DIR}
     ${IMGUI_DIR}/backends
     ${IMGUIFILEDIALOG_DIR}
+    ${PARENT_DIR}/include
     )
 
 add_executable(imgui-template-app
